@@ -3,7 +3,10 @@ Payload/
 artifacts/*.zip
 artifacts/*.ipa
 artifacts/slices/
+artifacts/slices038/
+artifacts/v038/
 artifacts/basebin/
+artifacts/analysis/diff038/
 artifacts/gdrive*
 artifacts/cookies.txt
 *.ipa
