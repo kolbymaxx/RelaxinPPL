@@ -14,9 +14,16 @@ Static analysis notes for Relaxin jailbreak IPA **v0.3.4(0)** PPL device gate.
 
 Phase 2b confirms: `isPPLDevice` is a one-line `hw.cpufamily` check feeding an early-return UI gate; the A14/M1 physrw + `_kPhysrwGfxA14M1PplLayout` and the Coruna bootstrap are full implementations (no stubs), gated only by the `allowingUntestedPPLDevice` boolean — but the A14 path is fragile and self-labeled untested. Phase 5 shows A13/A14 layout tables differ by one byte (name pointer only) and maps every A14 finalize exit that skips IOGPU teardown.
 
+## Fathom (theoretical scaffold)
+
+Independent design sketch — **not** a Relaxin IPA rebuild and **not** a working jailbreak:
+
+- [fathom/README.md](fathom/README.md)
+- Developer note: [fathom/docs/DEV_HANDOFF.md](fathom/docs/DEV_HANDOFF.md)
+
 ## Safety
 
-Read-only analysis only unless explicitly agreed. No patching / re-signing / on-device experiments by default.
+Read-only analysis / theoretical scaffolds only unless explicitly agreed. No patching / re-signing / on-device experiments by default. No exploit payloads.
 
 ## Local binaries
 
