@@ -1,0 +1,55 @@
+Relaxin v0.3.4(0) – Phase 2 key evidence (read-only)
+
+== Localization (en.lproj) ==
+Unsupported
+Unsupported Target
+Jailbreaking PPL devices is not currently supported.
+Jailbreaking PPL devices has not been tested. Continuing may cause unexpected device behavior.
+Bypass PPL Device Check?
+CPU family %@ does not have a supported runtime profile.
+The device CPU family could not be read.
+
+== Main binary Relaxin (file offsets) ==
+0x12b940  PPLJailbreakGate
+0x12bdc6  hw.cpufamily
+0x12e940  Jailbreaking PPL devices is not currently supported.
+0x12e9b0  Bypass PPL Device Check?
+0x12e9d0  Jailbreaking PPL devices has not been tested...
+0x1409c9  unsupportedOS / unsupportedSoC / missingCPUFamily
+
+Swift (demangled fragments):
+  Relaxin.JailbreakTarget.isPPLDevice
+  Relaxin.JailbreakTarget.RuntimeProfile.cpuFamily
+  Relaxin.DeviceInfo.cpuFamily
+  Relaxin.HomeView.presentPPLJailbreakGate
+  Relaxin.HomeView.startEngine.allowingUntestedPPLDevice
+  Relaxin.PPLJailbreakGate.finish.shouldBypass
+  Relaxin.PPLJailbreakGate.presentBypassConfirmation
+  Relaxin.PPLJailbreakGate.revealBypassConfirmation
+  Relaxin.PPLJailbreakGate.handleVolumeChange
+  Relaxin.PPLJailbreakGate.ExpectedVolumeEndpoint
+
+== RelaxinEngine runtime profiles (~0x888ee) ==
+A13    -> ppl-gfx-a13
+A14/M1 -> ppl-gfx-a14-m1
+A15    -> sptm-gfx-a15
+A16    -> sptm-gfx-a16
+A17    -> sptm-gfx-a17
+OS window strings: 17.0 .. 17.3.1
+
+== RelaxinEngine A14 / Coruna symbols (examples) ==
+_kPhysrwGfxA14M1PplLayout
+_physrw_gfx_prepare_a14_m1_control_data_alias
+_physrw_gfx_find_a14_m1_custom_root_pte
+_physrw_gfx_transact_a14_m1_ppl_control_pte
+_physrw_gfx_bootstrap_ppl_backend
+_physrw_coruna_create_voucher
+_physrw_coruna_prepare_fileport_fd
+_physrw_coruna_resolve_self_task
+_g_physrwCorunaTaskAnchor
+a14_kernel_access_finalize
+direct-gfx:a14-transaction-retained
+A14/M1-PPL
+
+== Verdict ==
+dormant / gated code present (A14/PPL/Coruna not missing; UI hard-gates by default)

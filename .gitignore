@@ -1,0 +1,11 @@
+# Do not commit IPA / extracted app / large artifacts
+Payload/
+artifacts/*.zip
+artifacts/*.ipa
+artifacts/slices/
+artifacts/basebin/
+artifacts/gdrive*
+artifacts/cookies.txt
+*.ipa
+*.zip
+.DS_Store
