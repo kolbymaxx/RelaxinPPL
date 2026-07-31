@@ -6,7 +6,10 @@ Static analysis notes for Relaxin jailbreak IPA **v0.3.4(0)** PPL device gate.
 
 **A14/PPL/Coruna support code is present in the binary and UI-gated**, not absent.
 
-See [docs/phase2-ppl-gate-static-analysis.md](docs/phase2-ppl-gate-static-analysis.md).
+- Phase 2 (strings/symbols): [docs/phase2-ppl-gate-static-analysis.md](docs/phase2-ppl-gate-static-analysis.md)
+- Phase 2b (disassembly): [docs/phase2b-ppl-gate-disassembly.md](docs/phase2b-ppl-gate-disassembly.md)
+
+Phase 2b confirms: `isPPLDevice` is a one-line `hw.cpufamily` check feeding an early-return UI gate; the A14/M1 physrw + `_kPhysrwGfxA14M1PplLayout` and the Coruna bootstrap are full implementations (no stubs), gated only by the `allowingUntestedPPLDevice` boolean — but the A14 path is fragile and self-labeled untested.
 
 ## Safety
 
